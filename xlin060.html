@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Bob Doran Museum — xlin060</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- 防缓存版本戳 -->
+  <link rel="stylesheet" href="xlin060.css?v=1.0.3">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2216%22 fill=%22%233b5bdb%22/><text x=%2250%25%22 y=%2258%25%22 font-size=%2256%22 text-anchor=%22middle%22 fill=%22white%22>⌘</text></svg>">
+</head>
+<body>
+  <header>
+    <h1>Bob Doran Museum of Computing</h1>
+    <nav>
+      <a href="#about" data-section="about" class="active">About</a>
+      <a href="#artefacts" data-section="artefacts">Artefacts</a>
+      <a href="#register" data-section="register">Register</a>
+      <a href="#guestbook" data-section="guestbook">Guestbook</a>
+      <a href="#events" data-section="events">Events</a>
+      <a href="#visits" data-section="visits">Visits</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- About -->
+    <section id="about" class="section active">
+      <div id="about-content">Loading…</div>
+    </section>
+
+    <!-- Artefacts -->
+    <section id="artefacts" class="section">
+      <div class="controls form-like">
+        <input id="artefact-search" type="search" placeholder="Search artefacts…" aria-label="Search artefacts">
+      </div>
+      <div id="artefacts-grid" class="grid"></div>
+    </section>
+
+    <!-- Register -->
+    <section id="register" class="section">
+      <div class="form-like">
+        <input id="reg-username" type="text" placeholder="Username" autocomplete="username">
+        <input id="reg-password" type="password" placeholder="Password" autocomplete="new-password">
+        <button id="reg-button" type="button">Register</button>
+      </div>
+      <div id="reg-result" class="result" aria-live="polite"></div>
+    </section>
+
+    <!-- Guestbook -->
+    <section id="guestbook" class="section">
+      <div class="form-like">
+        <textarea id="gb-text" rows="3" placeholder="Write a comment…"></textarea>
+        <button id="gb-post" type="button">Post Comment</button>
+      </div>
+      <div id="gb-result" class="result" aria-live="polite"></div>
+      <h3>Recent Comments</h3>
+      <iframe id="gb-iframe" title="Recent Comments" src="https://cws.auckland.ac.nz/museum/api/Comments"></iframe>
+    </section>
+
+    <!-- Events -->
+    <section id="events" class="section">
+      <div id="events-grid" class="grid events"></div>
+    </section>
+
+    <!-- Visits -->
+    <section id="visits" class="section">
+      <div class="legend">
+        <span class="key total"></span> Total visitors
+        <span class="key first" style="margin-left:16px"></span> First-time visitors
+      </div>
+      <div class="svg-wrap">
+        <svg id="visits-svg" viewBox="0 0 960 480" width="100%" height="auto" role="img" aria-label="Visits over time"></svg>
+      </div>
+      <div id="visits-table-wrap"></div>
+    </section>
+  </main>
+
+  <footer>Version: <span id="app-version"></span></footer>
+
+  <!-- Login dialog -->
+  <dialog id="login-dialog">
+    <h3>Login</h3>
+    <div class="row form-like" style="margin-top:6px">
+      <input id="login-username" type="text" placeholder="Username" autocomplete="username">
+      <input id="login-password" type="password" placeholder="Password" autocomplete="current-password">
+    </div>
+    <div class="row" style="margin-top:10px">
+      <button id="login-confirm" type="button">Login</button>
+      <button id="login-cancel" type="button">Cancel</button>
+    </div>
+    <div id="login-result" class="result" aria-live="polite"></div>
+  </dialog>
+
+  <script src="xlin060.js?v=1.0.3"></script>
+</body>
+</html>
